@@ -1,0 +1,95 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextBillAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/enter_bill_amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Switch
+        android:id="@+id/switchEnableTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/enable_tip"
+        app:layout_constraintTop_toBottomOf="@id/editTextBillAmount"
+        app:layout_constraintStart_toStartOf="@id/editTextBillAmount" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTipOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/switchEnableTip"
+        app:layout_constraintStart_toStartOf="@id/switchEnableTip">
+
+        <RadioButton
+            android:id="@+id/radioButtonAmazing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amazing_20" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/good_18" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_15" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewRoundTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/round_tip"
+        app:layout_constraintBottom_toBottomOf="@id/switchRoundTip"
+        app:layout_constraintStart_toStartOf="@id/radioGroupTipOptions"
+        app:layout_constraintTop_toTopOf="@id/switchRoundTip" />
+
+    <Switch
+        android:id="@+id/switchRoundTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupTipOptions"
+        app:layout_constraintEnd_toEndOf="@id/editTextBillAmount" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/calculate_tip"
+        app:layout_constraintTop_toBottomOf="@id/switchRoundTip"
+        app:layout_constraintStart_toStartOf="@id/editTextBillAmount"
+        app:layout_constraintEnd_toEndOf="@id/editTextBillAmount" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buttonCalculate"
+        app:layout_constraintEnd_toEndOf="@id/buttonCalculate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
